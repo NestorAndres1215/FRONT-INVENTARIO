@@ -1,0 +1,16 @@
+h1 {
+    text-transform: uppercase;
+}
+.img-admin{
+    width: 200px;
+    height: 200px;
+    image-rendering: crisp-edges;
+    margin-top: auto;
+    
+}
+.img-admin2{
+    width: 400px;
+    height: 200px;
+    image-rendering: crisp-edges;
+    margin-top: auto;
+}

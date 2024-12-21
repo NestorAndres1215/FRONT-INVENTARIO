@@ -1,0 +1,44 @@
+b{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  background-color: #ff4a4a;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  
+  
+  .content {
+    text-align: center;
+  }
+  
+  .welcome-title {
+    font-size: 100px;
+    color: #00ff4c;
+    margin-bottom: 60px;
+  }
+  
+  .welcome-message {
+    font-size: 30px;
+    color: #ff4a4a;
+    margin-bottom: 50px;
+  }
+  
+  .get-started-btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color:  #00ff4c;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 20px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .get-started-btn:hover {
+    background-color: #ff4a4a;
+  }
+  

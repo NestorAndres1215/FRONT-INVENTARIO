@@ -1,0 +1,18 @@
+<br>
+<h1>Usuarios Administrador</h1>
+<hr>
+<mat-tab-group [(selectedIndex)]="activeTab1">
+    <mat-tab label="Activados">
+        <div *ngIf="activeTab1 === 0">
+            <app-lista-usuario-administrador-activados></app-lista-usuario-administrador-activados>
+        </div>
+    </mat-tab>
+    <mat-tab label="Desactivados">
+        <div *ngIf="activeTab1 === 1">
+            <app-lista-usuario-administrador-desactivados></app-lista-usuario-administrador-desactivados>
+        </div>
+    </mat-tab>
+</mat-tab-group> 
+
+
+

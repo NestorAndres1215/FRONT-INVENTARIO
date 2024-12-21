@@ -1,0 +1,52 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <h1>Detalle de Entrada de Producto</h1>
+        <hr>
+        <br>
+        <div class="text-center">
+        </div>
+        <div class="row">
+            <div class="col-md-10 offset-md-1">
+                <table class="table text-center " *ngIf="detalleSalida">
+                    <tr>
+                        <th colspan="2" class="text-center" style="background-color: deepskyblue; margin-top: 550px;">
+                            Información de Contacto </th>
+                    </tr>
+                    <tr>
+                        <td><strong>Código</strong></td>
+                        <td>{{ detalleSalida.detalleSalidaId }}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Producto</strong></td>
+                        <td>{{ detalleSalida.producto.nombre }}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Descripcion</strong></td>
+                        <td>{{ detalleSalida.descripcion }}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cantidad</strong></td>
+                        <td>{{ detalleSalida.cantidad }}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Stock</strong></td>
+                        <td>{{ detalleSalida.producto.stock }}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Fecha de Salida</strong></td>
+                        <td>{{ detalleSalida.salida.fechaSalida }}</td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>Usuario</strong></td>
+                        <td>{{ detalleSalida.usuario.username }}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Nombre</strong></td>
+                        <td>{{ detalleSalida.usuario.nombre+" "+detalleSalida.usuario.apellido  }}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

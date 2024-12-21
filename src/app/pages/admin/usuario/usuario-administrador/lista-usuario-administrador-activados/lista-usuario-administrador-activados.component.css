@@ -1,0 +1,7 @@
+.search-container {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .button-container {
+    float: left;
+  }

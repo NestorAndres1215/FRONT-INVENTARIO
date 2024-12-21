@@ -1,0 +1,83 @@
+<!-- SIDEBAR -->
+<section id="sidebar" [ngClass]="status ? 'hide' : ''" style="background-color: rgb(1, 1, 1);">
+  <a routerLink="/admin" class="brand">
+    <img src="../../../../assets/img/logo.png" alt="" class="imagen">
+   
+  </a>
+ 
+  <ul class="side-menu top" >
+    <li class="active">
+      <a routerLink="/admin">
+        <i class='bx bx-home' ></i>
+        <span class="texto">Principal</span>
+      </a>
+    </li>
+    <li>
+      <a routerLink="/admin/usuario">
+        <i class='bx bx-user' ></i>
+        <span class="texto">Usuario</span>
+      </a>
+    </li>
+    <li>
+      <a routerLink="/admin/producto">
+        <i class='bx bx-archive' ></i>
+        <span class="texto">Inventario</span>
+      </a>
+    </li>
+    <li>
+      <a routerLink="/admin/proveedor">
+        <i class='bx bx-building-house' ></i>
+        <span class="texto">Proveedor</span>
+      </a>
+    </li>
+    <li>
+      <a routerLink="/admin/entradas">
+        <i class="bx bx-cart-alt"></i>
+        <span class="texto">Entradas</span>
+      </a>
+    </li>
+    <li>
+      <a routerLink="/admin/salidas">
+        <i class="bx bx-shopping-bag"></i>
+        <span class="texto">Salidas</span>
+      </a>
+    </li>
+    
+  </ul>
+
+  <ul class="side-menu top">
+    <li>
+      <a routerLink="/admin/configuracion">
+        <i class='bx bxs-cog' ></i>
+        <span class="texto">Configuracion</span>
+      </a>
+    </li>
+    <li>
+      <a *ngIf="isLoggedIn" (click)="logout()" class="logout">
+        <i class='bx bx-log-out' ></i>
+        <span class="texto">Cerrar Session</span>
+      </a>
+    </li>
+  </ul>
+</section>
+<!-- SIDEBAR -->
+<!-- CONTENT -->
+<section id="content">
+  <!-- NAVBAR -->
+  <nav>
+    <i (click)="addToggle()" class='bx bx-menu' ></i>
+      <a *ngIf="isLoggedIn && user" style="margin-left: auto;font-weight: bold;text-transform: uppercase; ">
+        {{ user.username }}
+      </a>
+  </nav>
+  <main>
+      <router-outlet></router-outlet>
+  </main>
+  
+</section>
+
+
+
+
+
+   

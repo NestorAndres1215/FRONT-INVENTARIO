@@ -1,0 +1,67 @@
+<!-- SIDEBAR -->
+<section id="sidebar" [ngClass]="status ? 'hide' : ''" style="background-color: rgb(11, 11, 11);">
+  <a href="#" class="brand">
+    <img src="../../../../assets/img/logo.png" alt="" class="imagen">
+
+  </a>
+  <br><br>
+  <hr>
+  <ul class="side-menu top">
+    <li class="active">
+      <a routerLink="/user-dashboard">
+        <i class='bx bx-home'></i>
+        <span class="texto">Principal</span>
+      </a>
+    </li>
+    <li>
+      <a routerLink="/user-dashboard/inventario">
+        <i class='bx bx-archive'></i>
+        <span class="texto">Inventario</span>
+      </a>
+    </li>
+
+    <li>
+      <a routerLink="/user-dashboard/entradas-usuario">
+        <i class="bx bx-cart-alt"></i>
+        <span class="texto">Entradas</span>
+      </a>
+    </li>
+    <li>
+      <a routerLink="/user-dashboard/salidas-usuario">
+        <i class="bx bx-shopping-bag"></i>
+        <span class="texto">Salida</span>
+      </a>
+    </li>
+  </ul>
+  <br><br>
+  <hr>
+  <ul class="side-menu">
+    <li>
+      <a routerLink="/user-dashboard/configuracion">
+        <i class='bx bxs-cog'></i>
+        <span class="texto">Configuracion</span>
+      </a>
+    </li>
+    <li>
+      <a *ngIf="isLoggedIn" (click)="logout()" class="logout">
+        <i class='bx bx-log-out'></i>
+        <span class="texto">Cerrar Session</span>
+      </a>
+    </li>
+  </ul>
+</section>
+
+<!-- CONTENT -->
+<section id="content">
+  <!-- NAVBAR -->
+  <nav>
+    <i (click)="addToggle()" class='bx bx-menu'></i>
+    <a *ngIf="isLoggedIn && user" style="margin-left: auto;font-weight: bold; ">
+      {{ user.username }}
+    </a>
+  </nav>
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+
+</section>

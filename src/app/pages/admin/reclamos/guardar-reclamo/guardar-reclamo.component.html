@@ -1,0 +1,27 @@
+<div class="bootstrap-wrapper">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+
+            <h1>Reclamo</h1>
+            <br><br>
+            <form (ngSubmit)="enviarEntrada()">
+                <mat-form-field class="w100" appearance="outline" *ngIf="isLoggedIn && user">
+                    <mat-label>Usuario</mat-label>
+                    <input matInput required name="Usuario" disabled="true" [value]="user.username" />
+                  </mat-form-field>
+                  <mat-form-field class="w100" appearance="outline" *ngIf="isLoggedIn && user">
+                    <mat-label>Usuario</mat-label>
+                    <input matInput required name="Usuario" disabled="true" [value]="user.email" />
+                  </mat-form-field>
+                <mat-form-field class="w100" appearance="outline">
+                    <mat-label>Asunto</mat-label>
+                    <textarea name="descripcion" matInput placeholder="Digite la descripcion sobre su reclamo"
+                        rows="10" [(ngModel)]="reclamo.asunto"></textarea>
+                </mat-form-field>
+                <div class="container text-center">
+                    <button class="btn btn-primary">Enviar Reclamo</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

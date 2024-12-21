@@ -1,0 +1,16 @@
+<div class="container">
+    <h1>Modulo de Inventario</h1>
+    <hr>
+    <mat-tab-group [(selectedIndex)]="activeTab">
+        <mat-tab label="Activadas">
+            <div *ngIf="activeTab === 0">
+                <app-listar-producto-activadas></app-listar-producto-activadas>
+            </div>
+        </mat-tab>
+        <mat-tab label="Desactivadas">
+            <div *ngIf="activeTab === 1">
+                <app-listar-producto-desactivadas></app-listar-producto-desactivadas>
+            </div>
+        </mat-tab>
+    </mat-tab-group>
+</div>

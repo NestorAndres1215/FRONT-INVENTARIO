@@ -1,0 +1,47 @@
+<div class="bootstrap-wrapper">
+    
+    <div class="container"> 
+       <h1>Detalle de Proveedor</h1>
+       <hr>
+       <br>
+     <div class="text-center">
+     </div>
+     <div class="row">
+       <div class="col-md-10 offset-md-1">
+         <table class="table text-center " *ngIf="proveedor">
+           <tr>
+             <th colspan="2" class="text-center" style="background-color: deepskyblue; margin-top: 550px;"> Información de Contacto  </th>
+           </tr>
+           <tr>
+             <td ><strong>Código</strong></td>
+             <td>{{ proveedor.proveedorId }}</td>
+           </tr>
+           <tr>
+             <td><strong>Nombre de Proveedor</strong></td>
+             <td>{{ proveedor.nombre }}</td>
+           </tr>
+             <tr>
+               <td><strong>Telefono de Proveedor</strong></td>
+               <td>{{ proveedor.telefono }}</td>
+             </tr>
+             <tr>
+               <td><strong>Ruc de Proveedor</strong></td>
+               <td>{{ proveedor.ruc }}</td>
+             </tr>
+             <tr>
+               <td><strong>Correo electronico de Proveedor</strong></td>
+               <td>{{ proveedor.email }}</td>
+             </tr>
+             <tr>
+               <td><strong>Rol</strong></td>
+               <td>{{ proveedor.direccion }}</td>
+             </tr>
+             <tr>
+               <td><strong>Estado</strong></td>
+               <td>{{ proveedor.estado? "Activo" : "Desactivado"}}</td>
+             </tr>
+         </table>
+       </div>
+     </div>
+   </div>
+ </div>

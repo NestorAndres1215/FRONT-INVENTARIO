@@ -1,0 +1,51 @@
+<div class="container"><br>
+    <h1 style="text-align: center;  font-family: Arial, sans-serif;">AGREGAR NUEVO PRODUCTO</h1>
+    <br>
+  
+    <div class="bootstrap-wrapper">
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
+          <form (submit)="formSubmit()" enctype="multipart/form-data">
+            <div class="row">
+              <mat-form-field class="w100" appearance="outline">
+                <mat-label>Producto</mat-label>
+                <input required autofocus type="text" name="nombre de producto" matInput
+                  placeholder="Digite el nombre del producto" [(ngModel)]="producto.nombre">
+              </mat-form-field>
+              <mat-form-field class="w100" appearance="outline">
+                <mat-label>Descripción</mat-label>
+                <input required autofocus type="text" name="nombre de descripción" matInput
+                  placeholder="Digite la descripción" [(ngModel)]="producto.descripcion">
+              </mat-form-field>
+              <mat-form-field class="w100" appearance="outline">
+                <mat-label>Precio</mat-label>
+                <input required autofocus type="number" name="precio de producto" matInput
+                  placeholder="Digite el precio del producto" [(ngModel)]="producto.precio" (input)="validarNumeroPositivo($event)">
+              </mat-form-field>
+              <mat-form-field class="w100" appearance="outline">
+                <mat-label>Stock</mat-label>
+                <input required autofocus type="number" name="stock de producto" matInput
+                  placeholder="Digite el stock del producto" [(ngModel)]="producto.stock" (input)="validarNumeroPositivo($event)">
+              </mat-form-field>
+              <mat-form-field class="w100" appearance="outline">
+                <mat-label>Ubicacion</mat-label>
+                <input required autofocus type="text" name="nombre de ubicacion" matInput
+                  placeholder="Digite la ubicacion" [(ngModel)]="producto.ubicacion">
+              </mat-form-field>
+              <mat-form-field class="w100" appearance="outline">
+                <mat-label>Proveedor</mat-label>
+                <mat-select name="proveedor de producto" [(ngModel)]="producto.proveedor.proveedorId">
+                  <mat-option *ngFor="let proveedor of proveedores" [value]="proveedor.proveedorId">{{ proveedor.nombre
+                    }}</mat-option>
+                </mat-select>
+              </mat-form-field>
+  
+              <br>
+              <div class="container text-center mt15">
+                <br>
+                <button class="btn btn-primary" type="submit">Guardar producto</button>
+              </div>
+            </div>
+          </form>
+          <br>
+        </div>

@@ -1,0 +1,44 @@
+<br>
+<div class="row">
+    <div class="col-md-4 mb-3">
+        <button class="btn btn-primary btn-block" routerLink="/user-dashboard/salidas-usuario/registrar-salidas">Registrar
+            Salida</button>
+    </div>
+    <br>
+
+</div>
+<div class="col-md-4 mb-3">
+    <button class="btn btn-primary btn-block" (click)="descargarPDF()">Generar Reporte
+    </button>
+</div>
+<div>
+
+    <table class="table table-bordered">
+        <thead style="background-color: deepskyblue;" class="text-center">
+            <tr>
+                <th>Código</th>
+                <th>Producto</th>
+                <th>Descripcion</th>
+                <th>Cantidad</th>
+                <th>Fecha de Entrada</th>
+                <th>Responsable</th>
+
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody class="text-center">
+            <tr *ngFor="let salida of detalleSalida">
+                <td>{{ salida.detalleSalidaId }}</td>
+                <td>{{ salida.producto.nombre }}</td>
+                <td>{{ salida.descripcion }}</td>
+                <td>{{ salida.cantidad }}</td>
+                <td>{{salida.salida.fechaSalida}}</td>
+                <td>{{salida.usuario.nombre}}</td>
+                <td>
+                    <button class="btn btn-success" routerLink="/user-dashboard/salidas/detalle/{{salida.detalleSalidaId }}"><i
+                            class='bx bx-info-circle'></i></button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

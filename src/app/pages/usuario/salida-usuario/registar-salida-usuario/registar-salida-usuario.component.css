@@ -1,0 +1,36 @@
+.w100{
+    width: 30%;
+  }
+
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .table th,
+  .table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+  }
+  
+  .table .bg-dark {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .table .table-header {
+    font-weight: bold;
+  }
+  
+  .table .text-center {
+    text-align: center;
+  }
+  
+  .table .text-uppercase {
+    text-transform: uppercase;
+  }
+  
+  .table .price {
+    font-weight: bold;
+    color: green;
+  }

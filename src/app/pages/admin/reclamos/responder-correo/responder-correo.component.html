@@ -1,0 +1,47 @@
+<div class="container">
+    <h1 class="text-center">Responder Reclamo</h1>
+    <hr>
+  
+    <div class="bootstrap-wrapper">
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
+
+          <br><br>
+          <table class="table text-center table-bordered">
+            <tr>
+              <td colspan="2" class="bg-dark text-white">Detalle de Reclamo</td>
+            </tr>
+            <tr>
+              <td>Codigo </td>
+              <td>{{ reclamo.reclamoId }}</td>
+            </tr>
+            <tr>
+              <td>Nombre </td>
+              <td style="text-transform: capitalize">{{ reclamo.usuario.nombre }}</td>
+            </tr>
+            <tr>
+              <td>Correo </td>
+              <td>{{ reclamo.usuario.email }}</td>
+            </tr>
+            <tr>
+              <td>Asunto</td>
+              <td>{{ reclamo.asunto }}</td>
+            </tr>
+          </table>
+          <br><br>
+          <div>
+            <h2>Mensaje a enviar al Correo</h2>
+            <hr>
+            <mat-form-field class="w100" appearance="outline">
+              
+              <mat-label>Mensaje</mat-label>
+              <textarea matInput [(ngModel)]="mensaje" placeholder="Ingrese el mensaje de disculpas"rows="9"></textarea>
+            </mat-form-field>
+            <div class="container text-center">
+              <button  class="btn btn-primary" (click)="enviarDisculpas()">Enviar Disculpas</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

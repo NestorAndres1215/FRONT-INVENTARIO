@@ -1,0 +1,19 @@
+<br>
+<h1>Usuarios Operador</h1>
+<hr>
+<mat-tab-group [(selectedIndex)]="activeTab1">
+    <mat-tab label="Activados">
+        <div *ngIf="activeTab1 === 0">
+            <app-lista-usuario-operador-activados></app-lista-usuario-operador-activados>
+        </div>
+    </mat-tab>
+    <mat-tab label="Desactivados">
+        <div *ngIf="activeTab1 === 1">
+            <app-lista-usuario-operador-desactivados></app-lista-usuario-operador-desactivados>
+        </div>
+    </mat-tab>
+</mat-tab-group> 
+
+
+
+

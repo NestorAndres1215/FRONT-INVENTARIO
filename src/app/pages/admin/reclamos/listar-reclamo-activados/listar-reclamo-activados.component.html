@@ -1,0 +1,28 @@
+<br>
+<h2>Lista de Activadas</h2>
+<hr>
+
+<table class="table table-bordered">
+    <thead style="background-color: deepskyblue;" class="text-center">
+     <tr>
+            <th>Código</th>
+            <th>Nombre</th>
+            <th>Correo</th>
+            <th>Asunto</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody class="text-center">
+        <tr *ngFor="let reclamo of reclamos">
+            <td>{{ reclamo.reclamoId }}</td>
+            <td>{{ reclamo.usuario.nombre }}</td>
+            <td>{{reclamo.usuario.email}}</td>
+            <td>{{reclamo.asunto}}</td>
+            <td>{{ reclamo.estado ? "Recido" : "Enviado" }}</td>
+            <td>
+                <button [routerLink]="'/admin/configuracion/reclamos/' + reclamo.reclamoId" class="btn btn-success">Responder</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

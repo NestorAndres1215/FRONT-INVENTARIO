@@ -1,0 +1,42 @@
+<h2 class="text-center">Actualizar producto</h2>
+<div class="row">
+  <div class="col-md-8 offset-md-2" *ngIf="producto">
+    <!-- Solo renderizar el formulario si producto está definido -->
+    <form (submit)="actualizarProducto()" enctype="multipart/form-data">
+      <mat-form-field class="w100" appearance="fill">
+        <mat-label>Nombre</mat-label>
+        <input type="text" id="nombre" name="nombre" [(ngModel)]="producto.nombre" required matInput>
+      </mat-form-field>
+      <mat-form-field class="w100" appearance="fill">
+        <mat-label>Descripcion</mat-label>
+        <input type="text" id="Descripcion" name="Descripcion" [(ngModel)]="producto.descripcion" required matInput>
+      </mat-form-field>
+      <mat-form-field class="w100" appearance="fill">
+        <mat-label>Precio</mat-label>
+        <input type="text" id="precio" name="precio" [(ngModel)]="producto.precio" required matInput>
+      </mat-form-field>
+      <mat-form-field class="w100" appearance="fill">
+        <mat-label>Stock</mat-label>
+        <input type="text" id="stock" name="stock" [(ngModel)]="producto.stock" required matInput>
+      </mat-form-field>
+      <mat-form-field class="w100" appearance="fill">
+        <mat-label>Ubicacion</mat-label>
+        <input type="text" id="Ubicacion" name="Ubicacion" [(ngModel)]="producto.ubicacion" required matInput>
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="mt20 w100">
+        <mat-label>Proveedor</mat-label>
+        <mat-select name="proveedorId" [(ngModel)]="producto.proveedor.proveedorId">
+          <mat-option *ngFor="let proveedor of proveedores" [value]="proveedor.proveedorId">
+            {{ proveedor.nombre }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      
+      <!-- Otras propiedades del producto -->
+      <br>
+      <div class="container text-center">
+        <button type="submit" class="btn btn-primary">Actualizar</button>
+      </div>
+    </form>
+  </div>
+</div>

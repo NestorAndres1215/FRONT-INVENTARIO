@@ -1,0 +1,31 @@
+<h2 class="text-center">Actualizar producto</h2>
+<div class="row">
+  <div class="col-md-8 offset-md-2" *ngIf="detalleSalida">
+    <!-- Solo renderizar el formulario si detalleEntrada está definido -->
+    <form (submit)="actualizarDetalleEntrada()">
+      <mat-form-field class="w100" appearance="fill">
+        <mat-label>Cantidad</mat-label>
+        <input type="text" id="cantidad" name="cantidad" [(ngModel)]="detalleSalida.cantidad" required matInput>
+      </mat-form-field>
+      <mat-form-field class="w100" appearance="fill">
+        <mat-label>Descripción</mat-label>
+        <input type="text" id="descripcion" name="descripcion" [(ngModel)]="detalleSalida.descripcion" required matInput>
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="mt20 w100">
+        <mat-label>Producto</mat-label>
+        <mat-select name="productoId" [(ngModel)]="detalleSalida.producto.productoId">
+          <mat-option *ngFor="let producto of productos" [value]="producto.productoId">
+            {{ producto.nombre }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      
+      <!-- Otras propiedades del producto -->
+      <br>
+      <div class="container text-center">
+        <button type="submit" class="btn btn-primary">Actualizar</button>
+      </div>
+    </form>
+  </div>
+</div>
+

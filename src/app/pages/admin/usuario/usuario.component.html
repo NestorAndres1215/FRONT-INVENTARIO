@@ -1,0 +1,16 @@
+<div class="container">
+    <h1>Modulo de Usuarios</h1>
+    <hr>
+    <mat-tab-group [(selectedIndex)]="activeTab">
+        <mat-tab label="Usuario Aministrador">
+            <div *ngIf="activeTab === 0">
+                <app-usuario-administrador></app-usuario-administrador>
+            </div>
+        </mat-tab>
+        <mat-tab label="Usuario Operador">
+            <div *ngIf="activeTab === 1">
+                <app-usuario-operador></app-usuario-operador>
+            </div>
+        </mat-tab>
+    </mat-tab-group> 
+</div>

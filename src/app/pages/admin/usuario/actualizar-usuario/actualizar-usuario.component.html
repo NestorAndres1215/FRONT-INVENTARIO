@@ -1,0 +1,39 @@
+<h2 class="text-center">Actualizar producto</h2>
+<div class="row">
+  <div class="col-md-8 offset-md-2" *ngIf="user">
+    <!-- Solo renderizar el formulario si producto está definido -->
+    <form >
+      <mat-form-field class="w100" appearance="fill">
+        <mat-label>Usuario</mat-label>
+        <input type="text" id="usuario" name="usuario" [(ngModel)]="user.username" required matInput>
+      </mat-form-field>
+      <mat-form-field class="w100" appearance="fill">
+        <mat-label>Nombre</mat-label>
+        <input type="text" id="nombre" name="nombre" [(ngModel)]="user.nombre" required matInput>
+      </mat-form-field>
+      <mat-form-field class="w100" appearance="fill">
+        <mat-label>Correo Electronico</mat-label>
+        <input type="text" id="email" name="email" [(ngModel)]="user.email" required matInput>
+      </mat-form-field>
+      <mat-form-field class="w100" appearance="fill">
+        <mat-label>Direccion</mat-label>
+        <input type="text" id="direccion" name="direccion" [(ngModel)]="user.direccion" required matInput>
+      </mat-form-field>
+      <mat-form-field class="w100" appearance="fill">
+        <mat-label>Telefono</mat-label>
+        <input type="number" id="telefono" name="telefono" [(ngModel)]="user.telefono" required matInput>
+      </mat-form-field>
+      <mat-form-field class="w100" appearance="fill">
+        <mat-label>Dni</mat-label>
+        <input type="text" id="dni" name="dni" [(ngModel)]="user.dni" required matInput>
+      </mat-form-field>
+      <!-- Otras propiedades del producto -->
+      <br>
+      <div class="container text-center">
+        <button type="submit" class="btn btn-primary" (click)="actualizarUsuario()">Actualizar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+

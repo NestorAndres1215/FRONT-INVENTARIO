@@ -1,0 +1,37 @@
+<br>
+
+<br>
+<br>
+<table  class="table table-bordered">
+    <thead style="background-color: deepskyblue;">
+        <tr>
+            <th>Código</th>
+            <th>Nombre Completo</th>
+            <th>Usuario</th>
+            <th>Correo</th>
+            <th>Telefono</th>
+            <th>Rol</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let usuarioRol of usuarioRoles">
+            <td>{{ usuarioRol.usuarioRolId }}</td>
+            <td>{{ usuarioRol.usuario.nombre +" "+usuarioRol.usuario.apellido}}</td>
+            <td>{{usuarioRol.usuario.username}}</td>
+            <td>{{usuarioRol.usuario.email}}</td>
+            <td>{{usuarioRol.usuario.telefono}}</td>
+            <td>{{ usuarioRol.rol.rolNombre }}</td>
+
+            <td> 
+                <button [routerLink]="'/admin/usuario/' + usuarioRol.usuarioRolId" class="btn btn-warning"><i class='bx bx-info-circle'></i></button>
+                &nbsp;
+                <button (click)="activarUsuario(usuarioRol.usuarioRolId)"  class="btn btn-danger"> <i class="fas fa-check-circle"></i></button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- Paginador -->
+<mat-paginator [length]="usuarioRoles.length" [pageSize]="pageSize" [pageIndex]="pageIndex" class="letra"
+    (page)="onPageChange($event)" #paginator></mat-paginator>

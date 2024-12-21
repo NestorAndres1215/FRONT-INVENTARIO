@@ -1,0 +1,19 @@
+<div class="container">
+    <br>
+    <h1>Modulo de Proveedor</h1>            
+ 
+    <hr>
+    <mat-tab-group [(selectedIndex)]="activeTab">
+        <mat-tab label="Activadas">
+            <div *ngIf="activeTab === 0">
+                <app-listar-activadas-proveedor></app-listar-activadas-proveedor>
+            </div>
+        </mat-tab>
+        <mat-tab label="Desactivadas">
+            <div *ngIf="activeTab === 1">
+                <app-listar-desactivar-proveedor></app-listar-desactivar-proveedor>
+            </div>
+        </mat-tab>
+    </mat-tab-group>    
+   
+</div>

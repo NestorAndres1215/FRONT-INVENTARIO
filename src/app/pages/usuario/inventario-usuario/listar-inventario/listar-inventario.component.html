@@ -1,0 +1,49 @@
+<br>
+<div class="container">
+  <div class="button-container">
+    <button class="btn btn-primary" [routerLink]="'/user-dashboard/inventario/crear-producto'">Registrar Producto</button>
+   <br><br> <button class="btn btn-primary" (click)="descargarPDF()">Generar Reporte</button>
+  <br><br>
+  </div>
+  
+<div class="search-container">
+  <mat-form-field>
+      <mat-icon matPrefix>search</mat-icon>
+      <input matInput [(ngModel)]="nombre" placeholder="Buscar Nombre" (input)="buscarPorNombre()">
+  </mat-form-field>
+</div>
+<table class="table table-bordered">
+  <thead style="background-color: deepskyblue;" class="text-center">
+    <tr>
+      <th>Código</th>
+      <th>Nombre</th>
+      <th>Descripcion</th>
+      <th>Precio</th>
+      <th>Stock</th>
+      <th>Proveedor</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody class="text-center">
+    <tr *ngFor="let producto of productos | slice: (paginator.pageIndex * paginator.pageSize):(paginator.pageIndex + 1) * paginator.pageSize">
+      <td>{{ producto.productoId }}</td>
+      <td>{{ producto.nombre }}</td>
+       <td>{{ producto.descripcion }}</td>
+      <td>{{"S/."+producto.precio}}</td>
+      <td>{{producto.stock}}</td>
+      <td>{{producto.proveedor.nombre}}</td>
+
+      <td>
+        <button class="btn btn-warning text-light" [routerLink]="'/admin/producto/detalle/' + producto.productoId" ><i class='bx bx-info-circle'></i></button>
+        &nbsp;
+        <button routerLink="/user-dashboard/inventario/{{ producto.productoId}}" class="btn btn-success"><i class='bx bx-pencil'></i></button>
+        &nbsp;
+        <button (click)="desactivarProducto(producto.productoId)" class="btn btn-danger"><i class='bx bx-trash'></i></button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Paginador -->
+<mat-paginator [length]="productos.length" [pageSize]="pageSize" [pageIndex]="pageIndex" class="letra"
+               (page)="onPageChange($event)" #paginator></mat-paginator>

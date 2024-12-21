@@ -1,0 +1,25 @@
+<br>
+<h1>Lista de Activadas</h1>
+<hr>
+<table class="table table-bordered">
+    <thead style="background-color: deepskyblue;" class="text-center">
+         <tr>
+            <th>Código</th>
+            <th>Nombre</th>
+            <th>Correo</th>
+            <th>Asunto</th>
+            <th>Estado</th>
+
+        </tr>
+    </thead>
+    <tbody class="text-center">
+        <tr *ngFor="let reclamo of reclamos">
+            <td>{{ reclamo.reclamoId }}</td>
+            <td>{{ reclamo.usuario.nombre }}</td>
+            <td>{{reclamo.usuario.email}}</td>
+            <td>{{reclamo.asunto}}</td>
+            <td>{{ reclamo.estado ? "Recido" : "Enviado" }}</td>
+
+        </tr>
+    </tbody>
+</table>

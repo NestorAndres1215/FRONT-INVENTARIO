@@ -1,0 +1,31 @@
+
+  <h2 class="text-center">Actualizar Proveedor</h2>
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <form (submit)="actualizarProveedor()" enctype="multipart/form-data">
+        <mat-form-field class="w100" appearance="fill">
+          <mat-label>Nombre</mat-label>
+          <input type="text" id="nombre" name="nombre" [(ngModel)]="proveedor.nombre" required matInput>
+        </mat-form-field>
+        <mat-form-field class="w100" appearance="fill">
+          <mat-label>Telefono</mat-label>
+          <input type="number" id="telefono" name="telefono" [(ngModel)]="proveedor.telefono" required matInput  (input)="limitarLongitud1($event);validarNumeroPositivo($event)">
+        </mat-form-field>
+        <mat-form-field class="w100" appearance="fill">
+          <mat-label>Direccion</mat-label>
+          <input type="text" id="direccion" name="direccion" [(ngModel)]="proveedor.direccion" required matInput>
+        </mat-form-field>
+        <mat-form-field class="w100" appearance="fill">
+          <mat-label>Correo</mat-label>
+          <input type="email" id="email" name="email" [(ngModel)]="proveedor.email" required matInput>
+        </mat-form-field>
+        <mat-form-field class="w100" appearance="fill">
+          <mat-label>Ruc</mat-label>
+          <input type="number" id="Ruc" name="Ruc" [(ngModel)]="proveedor.ruc" required matInput (input)="limitarLongitud2($event);validarNumeroPositivo($event)">
+        </mat-form-field>
+        <div class="container text-center">
+          <button type="submit" class="btn btn-primary">Actualizar</button>
+        </div>
+      </form>
+    </div>
+  </div>
