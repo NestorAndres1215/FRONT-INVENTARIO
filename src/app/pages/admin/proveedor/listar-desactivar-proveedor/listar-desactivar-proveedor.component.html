@@ -1,42 +1,55 @@
-<br>
-<h1>Lista de Desactivadas</h1>
-<hr>
+<body>
+  <div class="container">
+    <h1><i class="fas fa-truck"></i> Lista de Proveedores Desactivados</h1>
+    <hr />
 
-<div class="search-container">
-    <mat-form-field>
+    <div class="search-container">
+      <mat-form-field>
         <mat-icon matPrefix>search</mat-icon>
-        <input matInput [(ngModel)]="nombre" placeholder="Buscar Nombre" (input)="buscarPorNombre()">
-    </mat-form-field>
-</div>
-<table class="table table-bordered">
-    <thead style="background-color: deepskyblue;" class="text-center">
+        <input
+          matInput
+          [(ngModel)]="nombre"
+          placeholder="Buscar Nombre"
+          (input)="buscarPorNombre()"
+        />
+      </mat-form-field>
+    </div>
+    <table class="table table-bordered">
+      <thead class="text-center">
         <tr>
-            <th>Código</th>
-            <th>Nombre</th>
-            <th>Telefono</th>
-            <th>Ruc</th>
-            <th>Correo</th>
-            <th>Direccion</th>
-    
-            <th>Acciones</th>
+          <th><i class="fas fa-store"></i> Nombre</th>
+          <th><i class="fas fa-phone"></i> Teléfono</th>
+          <th><i class="fas fa-id-card"></i> RUC</th>
+          <th><i class="fas fa-envelope"></i> Correo</th>
+          <th><i class="fas fa-map-marker-alt"></i> Dirección</th>
+          <th><i class="fas fa-cogs"></i> Acciones</th>
         </tr>
-    </thead>
-    <tbody class="text-center">
+      </thead>
+      <tbody class="text-center">
         <tr *ngFor="let proveedor of proveedores">
-            <td>{{ proveedor.proveedorId }}</td>
-            <td>{{ proveedor.nombre }}</td>
-            <td>{{proveedor.telefono}}</td>
-            <td>{{proveedor.ruc}}</td>
-            <td>{{proveedor.email}}</td>
-            <td>{{proveedor.direccion}}</td>
-            
-            <td>
-                <button class="btn btn-warning text-light" [routerLink]="'/admin/proveedor/detalle/' + proveedor.proveedorId"><i
-                    class='bx bx-info-circle'></i></button>
-                &nbsp;
-                <button (click)="activarProveedor(proveedor.proveedorId)"
-                    class="btn btn-danger text-light"><i class="fas fa-check-circle"></i></button>
-            </td>
+          <td>{{ proveedor.nombre }}</td>
+          <td>{{ proveedor.telefono }}</td>
+          <td>{{ proveedor.ruc }}</td>
+          <td>{{ proveedor.email }}</td>
+          <td>{{ proveedor.direccion }}</td>
+
+          <td>
+            <button
+              class="btn-table btn-details"
+              [routerLink]="'/admin/proveedor/detalle/' + proveedor.proveedorId"
+            >
+              <i class="fas fa-info-circle"></i></button
+            >&nbsp;
+
+            <button
+              class="btn-table btn-delete"
+              (click)="activarProveedor(proveedor.proveedorId)"
+            >
+              <i class="fas fa-trash"></i>
+            </button>
+          </td>
         </tr>
-    </tbody>
-</table>
+      </tbody>
+    </table>
+  </div>
+</body>

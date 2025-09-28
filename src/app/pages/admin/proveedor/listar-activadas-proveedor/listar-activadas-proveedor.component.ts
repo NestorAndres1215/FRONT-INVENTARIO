@@ -14,6 +14,7 @@ export class ListarActivadasProveedorComponent implements OnInit {
   proveedores: any[] = [];
 
   proveedorId: string = '';
+productos: any;
   //proveedores: any;
 
   constructor(private proveedorService: ProveedorService,    private reporteSalida:ReportesService) { }

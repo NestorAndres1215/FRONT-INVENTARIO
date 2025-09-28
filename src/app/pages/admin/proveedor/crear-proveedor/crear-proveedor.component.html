@@ -1,42 +1,56 @@
-<br>
-
-<div class="bootstrap-wrapper">
-    <div class="row">
-        <div class="col-md-6 offset-md-2">
-            <h1 style="text-align: center;  font-family: Arial, sans-serif;">AGREGAR NUEVO PROVEEDOR</h1>
-            <form (submit)="crearProveedor()" enctype="multipart/form-data">
-                <mat-form-field class="w100" appearance="outline">
-                    <mat-label>Nombre Proveedor</mat-label>
-                    <input required autofocus type="text" name="nombre de proveedor" matInput
-                        placeholder="Digite el nombre del proveedor" [(ngModel)]="nombre">
-                </mat-form-field>
-                <mat-form-field class="w100" appearance="outline">
-                    <mat-label>Email Proveedor</mat-label>
-                    <input required autofocus type="email" name="email del proveedor" matInput
-                        placeholder="Digite el email del proveedor" [(ngModel)]="Email">
-                </mat-form-field>
-                <mat-form-field class="w100" appearance="outline">
-                    <mat-label>Telefono Proveedor</mat-label>
-                    <input required autofocus type="number" name="telefono de proveedor" matInput
-                        placeholder="Digite el telefono de proveedor" [(ngModel)]="Telefono"
-                        (input)="limitarLongitud1($event);validarNumeroPositivo($event)">
-                </mat-form-field>
-                <mat-form-field class="w100" appearance="outline">
-                    <mat-label>Direccion Proveedor</mat-label>
-                    <input required autofocus type="text" name="direccion de proveedor" matInput
-                        placeholder="Digite el direccion de proveedor" [(ngModel)]="Direccion">
-                </mat-form-field>
-                <mat-form-field class="w100" appearance="outline">
-                    <mat-label>Ruc Proveedor</mat-label>
-                    <input required autofocus type="number" name="ruc de proveedor" matInput
-                        placeholder="Digite el ruc de proveedor" [(ngModel)]="Ruc"
-                        (input)="validarNumeroPositivo($event);limitarLongitud2($event)">
-                </mat-form-field>
-                <br>
-                <div class="container text-center mt15">
-                    <button class="btn btn-primary">Registrar Proveedor</button>
-                </div>
-            </form>
+<body>
+  <div class="container">
+    <h1><i class="fas fa-truck"></i> Agregar Nuevo Proveedor</h1>
+    <hr>
+    <form class="form-grid" (submit)="crearProveedor()" enctype="multipart/form-data">
+      <div class="form-row">
+        <div class="form-column">
+          <mat-form-field appearance="outline">
+            <mat-label><i class="fas fa-store"></i> Nombre Proveedor</mat-label>
+            <input required autofocus type="text" name="nombre" matInput
+                   placeholder="Digite el nombre del proveedor" [(ngModel)]="nombre">
+          </mat-form-field>
         </div>
-    </div>
-</div>
+        <div class="form-column">
+          <mat-form-field appearance="outline">
+            <mat-label><i class="fas fa-envelope"></i> Email Proveedor</mat-label>
+            <input required autofocus type="email" name="email" matInput
+                   placeholder="Digite el email del proveedor" [(ngModel)]="Email">
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-column">
+          <mat-form-field appearance="outline">
+            <mat-label><i class="fas fa-phone"></i> Teléfono Proveedor</mat-label>
+            <input required autofocus type="number" name="telefono" matInput
+                   placeholder="Digite el teléfono del proveedor" [(ngModel)]="Telefono"
+                   (input)="limitarLongitud1($event); validarNumeroPositivo($event)">
+          </mat-form-field>
+        </div>
+        <div class="form-column">
+          <mat-form-field appearance="outline">
+            <mat-label><i class="fas fa-map-marker-alt"></i> Dirección Proveedor</mat-label>
+            <input required autofocus type="text" name="direccion" matInput
+                   placeholder="Digite la dirección del proveedor" [(ngModel)]="Direccion">
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-column">
+          <mat-form-field appearance="outline">
+            <mat-label><i class="fas fa-id-card"></i> RUC Proveedor</mat-label>
+            <input required autofocus type="number" name="ruc" matInput
+                   placeholder="Digite el RUC del proveedor" [(ngModel)]="Ruc"
+                   (input)="limitarLongitud2($event); validarNumeroPositivo($event)">
+          </mat-form-field>
+        </div>
+        <div class="form-column">
+          <button type="submit" class="btn-action">
+            <i class="fas fa-plus-circle"></i> Registrar Proveedor
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>

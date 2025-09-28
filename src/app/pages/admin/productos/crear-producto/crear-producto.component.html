@@ -1,51 +1,73 @@
-<div class="container"><br>
-  <h1 style="text-align: center;  font-family: Arial, sans-serif;">AGREGAR NUEVO PRODUCTO</h1>
-  <br>
+<body>
+  <div class="container">
+    <h1><i class="fas fa-box"></i> Agregar Nuevo Producto</h1>
+    <hr>
+    <form class="form-grid" (submit)="formSubmit()" enctype="multipart/form-data">
 
-  <div class="bootstrap-wrapper">
-    <div class="row">
-      <div class="col-md-8 offset-md-2">
-        <form (submit)="formSubmit()" enctype="multipart/form-data">
-          <div class="row">
-            <mat-form-field class="w100" appearance="outline">
-              <mat-label>Producto</mat-label>
-              <input required autofocus type="text" name="nombre de producto" matInput
-                placeholder="Digite el nombre del producto" [(ngModel)]="producto.nombre">
-            </mat-form-field>
-            <mat-form-field class="w100" appearance="outline">
-              <mat-label>Descripción</mat-label>
-              <input required autofocus type="text" name="nombre de descripción" matInput
-                placeholder="Digite la descripción" [(ngModel)]="producto.descripcion">
-            </mat-form-field>
-            <mat-form-field class="w100" appearance="outline">
-              <mat-label>Precio</mat-label>
-              <input required autofocus type="number" name="precio de producto" matInput
-                placeholder="Digite el precio del producto" [(ngModel)]="producto.precio" (input)="validarNumeroPositivo($event)">
-            </mat-form-field>
-            <mat-form-field class="w100" appearance="outline">
-              <mat-label>Stock</mat-label>
-              <input required autofocus type="number" name="stock de producto" matInput
-                placeholder="Digite el stock del producto" [(ngModel)]="producto.stock" (input)="validarNumeroPositivo($event)">
-            </mat-form-field>
-            <mat-form-field class="w100" appearance="outline">
-              <mat-label>Ubicacion</mat-label>
-              <input required autofocus type="text" name="nombre de ubicacion" matInput
-                placeholder="Digite la ubicacion" [(ngModel)]="producto.ubicacion">
-            </mat-form-field>
-            <mat-form-field class="w100" appearance="outline">
-              <mat-label>Proveedor</mat-label>
-              <mat-select name="proveedor de producto" [(ngModel)]="producto.proveedor.proveedorId">
-                <mat-option *ngFor="let proveedor of proveedores" [value]="proveedor.proveedorId">{{ proveedor.nombre
-                  }}</mat-option>
-              </mat-select>
-            </mat-form-field>
-
-            <br>
-            <div class="container text-center mt15">
-              <br>
-              <button class="btn btn-primary" type="submit">Guardar producto</button>
-            </div>
-          </div>
-        </form>
-        <br>
+      <div class="form-row">
+        <div class="form-column">
+          <mat-form-field appearance="outline">
+            <mat-label><i class="fas fa-box"></i> Nombre Producto</mat-label>
+            <input required autofocus type="text" name="nombre" matInput
+                   placeholder="Digite el nombre del producto" [(ngModel)]="producto.nombre">
+          </mat-form-field>
+        </div>
+        <div class="form-column">
+          <mat-form-field appearance="outline">
+            <mat-label><i class="fas fa-file-alt"></i> Descripción</mat-label>
+            <input required type="text" name="descripcion" matInput
+                   placeholder="Digite la descripción" [(ngModel)]="producto.descripcion">
+          </mat-form-field>
+        </div>
       </div>
+
+      <div class="form-row">
+        <div class="form-column">
+          <mat-form-field appearance="outline">
+            <mat-label><i class="fas fa-dollar-sign"></i> Precio</mat-label>
+            <input required type="number" name="precio" matInput
+                   placeholder="Digite el precio" [(ngModel)]="producto.precio"
+                   (input)="validarNumeroPositivo($event)">
+          </mat-form-field>
+        </div>
+        <div class="form-column">
+          <mat-form-field appearance="outline">
+            <mat-label><i class="fas fa-sort-numeric-up"></i> Stock</mat-label>
+            <input required type="number" name="stock" matInput
+                   placeholder="Digite el stock" [(ngModel)]="producto.stock"
+                   (input)="validarNumeroPositivo($event)">
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-column">
+          <mat-form-field appearance="outline">
+            <mat-label><i class="fas fa-map-marker-alt"></i> Ubicación</mat-label>
+            <input required type="text" name="ubicacion" matInput
+                   placeholder="Digite la ubicación" [(ngModel)]="producto.ubicacion">
+          </mat-form-field>
+        </div>
+        <div class="form-column">
+          <mat-form-field appearance="outline">
+            <mat-label><i class="fas fa-truck"></i> Proveedor</mat-label>
+            <mat-select name="proveedor" [(ngModel)]="producto.proveedor.proveedorId">
+              <mat-option *ngFor="let proveedor of proveedores" [value]="proveedor.proveedorId">
+                {{ proveedor.nombre }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-column">
+          <button type="submit" class="btn-action">
+            <i class="fas fa-save"></i> Guardar Producto
+          </button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</body>

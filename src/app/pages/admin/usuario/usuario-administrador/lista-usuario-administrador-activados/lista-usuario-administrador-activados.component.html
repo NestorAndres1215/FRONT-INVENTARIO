@@ -1,48 +1,66 @@
-<br>
-<div class="button-container">
-    <button class="btn btn-primary" [routerLink]="'/admin/usuario/registrar-usuario-administrador'"> Registrar
-        Administrador</button><br><br>
-    <button class="btn btn-primary btn-block" (click)="descargarPDF()">Generar Reporte
-    </button><br><br>
-</div>
-<br>
-<br>
-<br>
-<table class="table table-bordered">
-    <thead style="background-color: deepskyblue;" class="text-center">
+<body>
+  <div class="container">
+    <h1><i class="fas fa-users-cog"></i> Lista de Usuarios Admin Activados</h1>
+    <hr />
+    <div class="button-container">
+      <button
+        class="btn-action"
+        [routerLink]="'/admin/usuario/registrar-usuario-administrador'"
+      >
+        <i class="fas fa-user-plus"></i> Registrar Administrador
+      </button>
+      <button class="btn-action" (click)="descargarPDF()">
+        <i class="fas fa-file-pdf"></i> Generar Reporte
+      </button>
+    </div>
+    <table class="table text-center">
+      <thead>
         <tr>
-            <th>Código</th>
-            <th>Nombre </th>
-            <th>Apellido</th>
-            <th>Usuario</th>
-            <th>Correo</th>
-            <th>Telefono</th>
-            <th>Rol</th>
-            <th>Acciones</th>
-
+          <th><i class="fas fa-hashtag"></i> Código</th>
+          <th><i class="fas fa-user"></i> Nombre Completo</th>
+          <th><i class="fas fa-user-circle"></i> Usuario</th>
+          <th><i class="fas fa-envelope"></i> Correo</th>
+          <th><i class="fas fa-phone"></i> Teléfono</th>
+          <th><i class="fas fa-id-badge"></i> Rol</th>
+          <th><i class="fas fa-cogs"></i> Acciones</th>
         </tr>
-    </thead>
-    <tbody>
+      </thead>
+      <tbody>
         <tr *ngFor="let usuarioRol of usuarioRoles">
-            <td>{{ usuarioRol.usuarioRolId }}</td>
-            <td>{{ usuarioRol.usuario.nombre }}</td>
-            <td>{{ usuarioRol.usuario.apellido}}</td>
-            <td>{{usuarioRol.usuario.username}}</td>
-            <td>{{usuarioRol.usuario.email}}</td>
-            <td>{{usuarioRol.usuario.telefono}}</td>
-            <td>{{ usuarioRol.rol.rolNombre }}</td>
+          <td>{{ usuarioRol.usuarioRolId }}</td>
+          <td>{{ usuarioRol.usuario.nombre }}</td>
+          <td>{{ usuarioRol.usuario.apellido }}</td>
+          <td>{{ usuarioRol.usuario.username }}</td>
+          <td>{{ usuarioRol.usuario.email }}</td>
+          <td>{{ usuarioRol.usuario.telefono }}</td>
+          <td>{{ usuarioRol.rol.rolNombre }}</td>
 
-            <td>
-                <button [routerLink]="'/admin/usuario/' + usuarioRol.usuarioRolId" class="btn btn-warning"><i
-                        class='bx bx-info-circle'></i></button>
-                &nbsp;
-                <button (click)="desactivarUsuario(usuarioRol.usuarioRolId)" class="btn btn-danger"> <i
-                        class='bx bx-trash'></i></button>
-            </td>
+          <td>
+            <button
+              [routerLink]="'/admin/usuario/' + usuarioRol.usuarioRolId"
+              class="btn btn-warning"
+            >
+              <i class="bx bx-info-circle"></i>
+            </button>
+            &nbsp;
+            <button
+              (click)="desactivarUsuario(usuarioRol.usuarioRolId)"
+              class="btn btn-danger"
+            >
+              <i class="bx bx-trash"></i>
+            </button>
+          </td>
         </tr>
-    </tbody>
-</table>
-
-<!-- Paginador -->
-<mat-paginator [length]="usuarioRoles.length" [pageSize]="pageSize" [pageIndex]="pageIndex" class="letra"
-    (page)="onPageChange($event)" #paginator></mat-paginator>
+      </tbody>
+    </table>
+    <!-- Paginador -->
+    <mat-paginator
+      [length]="usuarioRoles.length"
+      [pageSize]="pageSize"
+      [pageIndex]="pageIndex"
+      class="letra"
+      (page)="onPageChange($event)"
+      #paginator
+    ></mat-paginator>
+  </div>
+</body>

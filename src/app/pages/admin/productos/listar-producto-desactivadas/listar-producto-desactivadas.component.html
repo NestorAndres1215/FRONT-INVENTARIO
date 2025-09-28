@@ -1,42 +1,57 @@
 <br>
-<h1>Lista de Desactivadas</h1>
+<body>
+  <div class="container">
+
+<h1><i class="fas fa-box-open"></i> Lista de Desactivadas</h1>
 <hr>
+
 <div class="search-container">
   <mat-form-field>
-      <mat-icon matPrefix>search</mat-icon>
-      <input matInput [(ngModel)]="nombre" placeholder="Buscar Nombre" (input)="buscarPorNombre()">
+    <mat-icon matPrefix>search</mat-icon>
+    <input matInput [(ngModel)]="nombre" placeholder="Buscar Nombre" (input)="buscarPorNombre()">
   </mat-form-field>
 </div>
-<br><table class="table table-bordered">
-    <thead style="background-color: deepskyblue;" class="text-center">
-      <tr>
-        <th>Código</th>
-        <th>Nombre</th>
-        <th>Descripcion</th>
-        <th>Precio</th>
-        <th>Stock</th>
-        <th>Proveedor</th>
-        <th>Acciones</th>
-      </tr>
-    </thead>
-    <tbody class="text-center">
-      <tr *ngFor="let producto of productos | slice: (paginator.pageIndex * paginator.pageSize):(paginator.pageIndex + 1) * paginator.pageSize">
-        <td>{{ producto.productoId }}</td>
-        <td>{{ producto.nombre }}</td>
-         <td>{{ producto.descripcion }}</td>
-        <td>{{"S/."+producto.precio}}</td>
-        <td>{{producto.stock}}</td>
-        <td>{{producto.proveedor.nombre}}</td>
-  
-        <td>
-          <button class="btn btn-warning text-light" [routerLink]="'/admin/producto/detalle/' + producto.productoId" ><i class='bx bx-info-circle'></i></button>
-          &nbsp;
-          <button (click)="activarProducto(producto.productoId)" class="btn btn-danger"><i class="fas fa-check-circle"></i></button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
 
-  <!-- Paginador -->
-  <mat-paginator [length]="productos.length" [pageSize]="pageSize" [pageIndex]="pageIndex" class="letra"
-                 (page)="onPageChange($event)" #paginator></mat-paginator>
+<br>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th><i class="fas fa-hashtag"></i> Código</th>
+      <th><i class="fas fa-store"></i> Nombre</th>
+      <th><i class="fas fa-file-alt"></i> Descripción</th>
+      <th><i class="fas fa-dollar-sign"></i> Precio</th>
+      <th><i class="fas fa-sort-numeric-up"></i> Stock</th>
+      <th><i class="fas fa-truck"></i> Proveedor</th>
+      <th><i class="fas fa-cogs"></i> Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let producto of productos | slice: (paginator.pageIndex * paginator.pageSize):(paginator.pageIndex + 1) * paginator.pageSize">
+      <td>{{ producto.productoId }}</td>
+      <td>{{ producto.nombre }}</td>
+      <td>{{ producto.descripcion }}</td>
+      <td>{{ "S/." + producto.precio }}</td>
+      <td>{{ producto.stock }}</td>
+      <td>{{ producto.proveedor.nombre }}</td>
+      <td>
+        <button class="btn-table btn-details" [routerLink]="'/admin/producto/detalle/' + producto.productoId">
+          <i class="fas fa-info-circle"></i>
+        </button>&nbsp;
+        <button class="btn-table btn-activate" (click)="activarProducto(producto.productoId)">
+          <i class="fas fa-check-circle"></i>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Paginador -->
+<mat-paginator
+  [length]="productos.length"
+  [pageSize]="pageSize"
+  [pageIndex]="pageIndex"
+  (page)="onPageChange($event)"
+  #paginator>
+</mat-paginator></div>
+</body>
