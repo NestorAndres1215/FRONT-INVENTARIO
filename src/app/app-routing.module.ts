@@ -1,5 +1,4 @@
-import { NormalGuard } from './services/normal.guard';
-import { AdminGuard } from './services/admin.guard';
+
 import { DashboardComponent } from './pages/admin/home-admin/home-admin.component';
 import { LoginComponent } from './pages/configuracion/login/login.component';
 import { HomeComponent } from './pages/configuracion/home/home.component';
@@ -38,10 +37,9 @@ import { DetalleEntradaComponent } from './pages/admin/entradas/detalle-entrada/
 import { SalidasComponent } from './pages/admin/salidas/salidas.component';
 import { RegistrarSalidasComponent } from './pages/admin/salidas/registrar-salidas/registrar-salidas.component';
 import { DetalleSalidasComponent } from './pages/admin/salidas/detalle-salidas/detalle-salidas.component';
-import { ActualizarEntradaComponent } from './pages/admin/entradas/actualizar-entrada/actualizar-entrada.component';
+
 import { EntradaUsuarioComponent } from './pages/usuario/entrada-usuario/entrada-usuario.component';
 import { SalidaUsuarioComponent } from './pages/usuario/salida-usuario/salida-usuario.component';
-import { ActualizarSalidaComponent } from './pages/admin/salidas/actualizar-salida/actualizar-salida.component';
 import { ActualizarUsuarioComponent } from './pages/admin/usuario/actualizar-usuario/actualizar-usuario.component';
 import { ResponderCorreoComponent } from './pages/admin/reclamos/responder-correo/responder-correo.component';
 import { ActualizarUsuarioUsuarioComponent } from './pages/usuario/actualizar-usuario-usuario/actualizar-usuario-usuario.component';
@@ -50,6 +48,8 @@ import { ActualizarInventarioComponent } from './pages/usuario/inventario-usuari
 import { GuardarInventarioComponent } from './pages/usuario/inventario-usuario/guardar-inventario/guardar-inventario.component';
 import { RegistarSalidaUsuarioComponent } from './pages/usuario/salida-usuario/registar-salida-usuario/registar-salida-usuario.component';
 import { RegistrarEntradaUsuarioComponent } from './pages/usuario/entrada-usuario/registrar-entrada-usuario/registrar-entrada-usuario.component';
+import { AdminGuard } from './core/guards/admin.guard';
+import { NormalGuard } from './core/guards/normal.guard';
 
 const routes: Routes = [
   {
@@ -92,10 +92,7 @@ const routes: Routes = [
         path: 'salidas/detalle/:detalleSalidaId',
         component: DetalleSalidasComponent,
       },
-      {
-        path: 'salidas/actualizar/:detalleSalidaId',
-        component: ActualizarSalidaComponent,
-      },
+
       {
         path: 'entradas',
         component: EntradasComponent,
@@ -108,10 +105,7 @@ const routes: Routes = [
         path: 'entradas/detalle/:detalleEntradaId',
         component: DetalleEntradaComponent,
       },
-      {
-        path: 'entradas/actualizar/:detalleEntradaId',
-        component: ActualizarEntradaComponent,
-      },
+
       {
         path: 'proveedor',
         component: ProveedorComponent,

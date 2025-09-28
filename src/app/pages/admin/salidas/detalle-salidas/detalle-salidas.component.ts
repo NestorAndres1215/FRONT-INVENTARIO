@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { SalidaService } from 'src/app/services/salida.service';
+import { SalidaService } from 'src/app/core/services/salida.service';
 
 @Component({
   selector: 'app-detalle-salidas',

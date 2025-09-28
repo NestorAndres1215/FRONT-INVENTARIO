@@ -1,40 +1,46 @@
-<div class="container">
-  <h1 class="mt-3" *ngIf="isLoggedIn && user">Bienvenido Administrador {{ user.username }}</h1>
-  <hr>
-  <div class="container mt-5">
-    <div class="row">
-      <div class="col-sm-8">
-        <h4>
-          <p>Es un honor darle la más cordial bienvenida como administrador de nuestro sistema de gestión de almacén en
-            Super Xtra. Su presencia en este rol es de suma importancia, ya que desempeñará un papel fundamental en la
-            supervisión y optimización de nuestra operación de almacén, un componente crítico para el éxito continuo de
-            nuestra tienda.</p>
-          <p>Como administrador, tendrá la responsabilidad de liderar y coordinar todas las actividades relacionadas con
-            el almacenamiento, control de inventario, distribución y gestión de productos. Su experiencia y habilidades
-            serán invaluables para garantizar que nuestro almacén funcione de manera eficaz y eficiente.</p>
-  
-          <p>¡Bienvenido una vez más y gracias por su compromiso con nuestra empresa!</p>
-
-
-        </h4>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1 *ngIf="isLoggedIn && user"><i class="fas fa-user-shield"></i> Bienvenido Administrador {{ user.username }}</h1>
+    </div>
+    <hr>
+    <div class="welcome-section">
+      <div class="welcome-text">
+        <p>¡Bienvenido al Panel Administrativo de Super Xtra! Su rol es esencial para el éxito de nuestras operaciones de almacén.</p>
+        <p>Como administrador, liderará la gestión de inventario, usuarios, proveedores, ventas, compras y configuraciones, asegurando que todo funcione con precisión y eficiencia.</p>
+        <p>Gracias por su compromiso y dedicación con nuestra empresa.</p>
       </div>
-      <div class="col-sm-4">
-        <img src="../../../../assets/img/logo.png" alt="" class="img-admin img-fluid">
+      <div class="logo-container">
+        <img src="../../../../assets/img/logo.png" alt="Super Xtra Logo" class="img-admin img-fluid">
       </div>
     </div>
-    <br><br>
-    <h2>Funciones del Administrador</h2>
-    <div class="row">
-      <div class="col-sm-6">
-        <ul>
-          <li>Gestionar los Productos</li>
-          <li>Gestionar los Usuarios</li>
-          <li>Gestionar los Proveedores</li>
-          <li>Gestionar las Ventas</li>
-          <li>Gestionar los Compras</li>
-          <li>Gestionar las Configuraciones</li>
-        </ul>
+    <div class="functions-section">
+      <h2><i class="fas fa-tasks"></i> Funciones del Administrador</h2>
+      <div class="functions-grid">
+        <div class="function-card">
+          <i class="fas fa-boxes"></i>
+          <h3>Gestionar los Productos</h3>
+        </div>
+        <div class="function-card">
+          <i class="fas fa-users"></i>
+          <h3>Gestionar los Usuarios</h3>
+        </div>
+        <div class="function-card">
+          <i class="fas fa-truck"></i>
+          <h3>Gestionar los Proveedores</h3>
+        </div>
+        <div class="function-card">
+          <i class="fas fa-shopping-cart"></i>
+          <h3>Gestionar las Ventas</h3>
+        </div>
+        <div class="function-card">
+          <i class="fas fa-shopping-bag"></i>
+          <h3>Gestionar las Compras</h3>
+        </div>
+        <div class="function-card">
+          <i class="fas fa-cogs"></i>
+          <h3>Gestionar las Configuraciones</h3>
+        </div>
       </div>
     </div>
   </div>
-</div>

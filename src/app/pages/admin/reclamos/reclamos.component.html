@@ -1,16 +1,24 @@
-<div class="container">
-    <h1>Modulo de Inventario</h1>
+<body>
+  <div class="container">
+    <h1><i class="fas fa-boxes"></i> Módulo de Inventario</h1>
     <hr>
     <mat-tab-group [(selectedIndex)]="activeTab">
-        <mat-tab label="Activadas">
-            <div *ngIf="activeTab === 0">
-                <app-listar-reclamo-activados></app-listar-reclamo-activados>
-            </div>
-        </mat-tab>
-        <mat-tab label="Desactivadas">
-            <div *ngIf="activeTab === 1">
-               <app-listar-reclamo-desactivados></app-listar-reclamo-desactivados>
-            </div>
-        </mat-tab>
+      <mat-tab label="Activadas">
+        <ng-template mat-tab-label>
+           Activadas
+        </ng-template>
+        <div *ngIf="activeTab === 0" class="tab-content">
+          <app-listar-reclamo-activados></app-listar-reclamo-activados>
+        </div>
+      </mat-tab>
+      <mat-tab label="Desactivadas">
+        <ng-template mat-tab-label>
+           Desactivadas
+        </ng-template>
+        <div *ngIf="activeTab === 1" class="tab-content">
+          <app-listar-reclamo-desactivados></app-listar-reclamo-desactivados>
+        </div>
+      </mat-tab>
     </mat-tab-group>
-</div>
+  </div>
+</body>

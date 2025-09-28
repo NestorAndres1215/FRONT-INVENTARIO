@@ -1,16 +1,214 @@
-h1 {
-    text-transform: uppercase;
-}
-.img-admin{
-    width: 200px;
-    height: 200px;
-    image-rendering: crisp-edges;
-    margin-top: auto;
-    
-}
-.img-admin2{
-    width: 400px;
-    height: 200px;
-    image-rendering: crisp-edges;
-    margin-top: auto;
-}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+
+      font-family: 'Poppins', sans-serif;
+      color: #333;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .header h1 {
+      text-transform: uppercase;
+      font-size: 2.5rem;
+   
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .header h1 i {
+      color: #ff6f61;
+      animation: pulse 2s infinite;
+    }
+
+    hr {
+      border: 0;
+      height: 2px;
+      background: #ff6f61;
+      margin: 20px 0;
+    }
+
+    .welcome-section {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      margin-bottom: 40px;
+      animation: fadeIn 1s ease-in-out;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .welcome-text {
+      flex: 1;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    .welcome-text p {
+      margin-bottom: 15px;
+    }
+
+    .logo-container {
+      flex: 0 0 auto;
+    }
+
+    .img-admin {
+      width: 180px;
+      height: 180px;
+      object-fit: contain;
+      border-radius: 15px;
+      border: 3px solid #ff6f61;
+      transition: transform 0.3s ease;
+    }
+
+    .img-admin:hover {
+      transform: scale(1.05);
+    }
+
+    .functions-section h2 {
+      font-size: 2rem;
+
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .functions-section h2 i {
+      color: #ff6f61;
+    }
+
+    .functions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .function-card {
+      background: #f5f5f5;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .function-card:hover {
+      background: #ff6f61;
+      color: #fff;
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .function-card i {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      color: #2a5298;
+    }
+
+    .function-card:hover i {
+      color: #fff;
+    }
+
+    .function-card h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    @media (max-width: 768px) {
+      .header h1 {
+        font-size: 2rem;
+      }
+
+      .welcome-section {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .functions-section h2 {
+        font-size: 1.8rem;
+      }
+
+      .welcome-text {
+        font-size: 1rem;
+      }
+
+      .img-admin {
+        width: 150px;
+        height: 150px;
+      }
+
+      .function-card h3 {
+        font-size: 1.1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 10px;
+      }
+
+      .welcome-section {
+        padding: 20px;
+      }
+
+      .header h1 {
+        font-size: 1.8rem;
+      }
+
+      .functions-section h2 {
+        font-size: 1.5rem;
+      }
+
+      .img-admin {
+        width: 120px;
+        height: 120px;
+      }
+
+      .function-card {
+        padding: 15px;
+      }
+    }

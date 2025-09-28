@@ -2,9 +2,9 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { ProductoService } from 'src/app/services/producto.service';
+import { ProductoService } from 'src/app/core/services/producto.service';
 import Swal from 'sweetalert2';
-import { ProveedorService } from 'src/app/services/proveedor.service';
+import { ProveedorService } from 'src/app/core/services/proveedor.service';
 
 
 @Component({

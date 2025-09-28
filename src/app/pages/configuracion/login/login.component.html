@@ -1,29 +1,33 @@
-<div class="container">
-  <div class="row justify-content-center align-items-center" style="height: 80vh;">
-    <div class="col-md-6">
-      <div class="container text-center">
-        <img src="../../../../assets/img/login.jpg" width="100" height="100">
-      </div><br>
-      <h1 class="text-center">Inicio de Sesión</h1>
+<body>
+  <div class="container">
+    <div class="login-card">
+      <img src="../../../../assets/img/login.jpg" class="login-logo" alt="Login Logo">
+      <h1 class="login-title"><i class="fas fa-lock"></i> Inicio de Sesión</h1>
       <form (ngSubmit)="formSubmit()">
         <mat-form-field class="full-width" appearance="outline">
-          <mat-label>Nombre de usuario</mat-label>
-          <input [(ngModel)]="loginData.username" name="username" required matInput
-            placeholder="Digite su nombre de usuario">
+          <mat-label><i class="fas fa-user"></i> Nombre de usuario</mat-label>
+          <input [(ngModel)]="loginData.login" name="username" required matInput
+                 placeholder="Digite su nombre de usuario">
           <mat-hint>El nombre de usuario debe ser válido</mat-hint>
         </mat-form-field>
-        <mat-form-field class="full-width" appearance="outline">
-          <mat-label>Contraseña</mat-label>
-          <input [(ngModel)]="loginData.password" name="password" required type="password" matInput
-            placeholder="Digite su contraseña">
-          <mat-hint>La contraseña debe ser válida</mat-hint>
-        </mat-form-field>
-        
-        <div class="container text-center"><br>
-          <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+      <mat-form-field class="full-width" appearance="outline">
+  <mat-label><i class="fas fa-key"></i> Contraseña</mat-label>
+  <input [(ngModel)]="loginData.password" 
+         name="password" 
+         required 
+         [type]="hidePassword ? 'password' : 'text'" 
+         matInput
+         placeholder="Digite su contraseña">
+  <button mat-icon-button matSuffix type="button" (click)="hidePassword = !hidePassword">
+    <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+  </button>
+  <mat-hint>La contraseña debe ser válida</mat-hint>
+</mat-form-field>
+
+        <div class="text-center">
+          <button type="submit" class="login-btn"><i class="fas fa-sign-in-alt"></i> Iniciar sesión</button>
         </div>
-       
       </form>
     </div>
   </div>
-</div>
+</body>

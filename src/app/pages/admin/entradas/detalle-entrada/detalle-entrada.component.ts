@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { EntradaService } from 'src/app/services/entrada.service';
+import { EntradaService } from 'src/app/core/services/entrada.service';
 
 @Component({
   selector: 'app-detalle-entrada',

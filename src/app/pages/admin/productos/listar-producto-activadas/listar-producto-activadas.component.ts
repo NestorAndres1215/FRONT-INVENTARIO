@@ -1,10 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { ProductoService } from 'src/app/services/producto.service';
+import { ProductoService } from 'src/app/core/services/producto.service';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import Swal from 'sweetalert2';
-import { ReportesService } from 'src/app/services/reportes.service';
+import { ReportesService } from 'src/app/core/services/reportes.service';
 @Component({
   selector: 'app-listar-producto-activadas',
   templateUrl: './listar-producto-activadas.component.html',

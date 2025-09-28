@@ -2,8 +2,8 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ProductoService } from 'src/app/services/producto.service';
-import { ProveedorService } from 'src/app/services/proveedor.service';
+import { ProductoService } from 'src/app/core/services/producto.service';
+import { ProveedorService } from 'src/app/core/services/proveedor.service';
 import Swal from 'sweetalert2';
 @Component({
   selector: 'app-actualizar-producto',

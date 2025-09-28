@@ -1,77 +1,85 @@
 import { Router } from '@angular/router';
-import { LoginService } from '../../../services/login.service';
+import { LoginService } from '../../../core/services/login.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Component, OnInit } from '@angular/core';
-
+import { FormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @Component({
   selector: 'app-login',
+
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-
   loginData = {
-    "username" : '',
-    "password" : '',
-  }
+    login: '',
+    password: '',
+  };
 
-  constructor(private snack:MatSnackBar,private loginService:LoginService,private router:Router) { }
+  constructor(
+    private snack: MatSnackBar,
+    private loginService: LoginService,
+    private router: Router
+  ) {}
 
-  ngOnInit(): void {
-   
-}
+  ngOnInit(): void {}
 
-
-  formSubmit(){
-    console.log("hola")
-    if(this.loginData.username.trim() == '' || this.loginData.username.trim() == null){
+  hidePassword = true; // control del ojo
+  formSubmit() {
+    console.log('hola');
+    if (
+      this.loginData.login.trim() == '' ||
+      this.loginData.login.trim() == null
+    ) {
       console.log(this.loginData);
-      
-      this.snack.open('El nombre de usuario es requerido !!','Aceptar',{
-        duration:3000
-      })
+
+      this.snack.open('El nombre de usuario es requerido !!', 'Aceptar', {
+        duration: 3000,
+      });
       return;
     }
 
-    if(this.loginData.password.trim() == '' || this.loginData.password.trim() == null){
-      this.snack.open('La contraseña es requerida !!','Aceptar',{
-        duration:3000
-      })
+    if (
+      this.loginData.password.trim() == '' ||
+      this.loginData.password.trim() == null
+    ) {
+      this.snack.open('La contraseña es requerida !!', 'Aceptar', {
+        duration: 3000,
+      });
       return;
     }
 
     this.loginService.generateToken(this.loginData).subscribe(
-      (data:any) => {
+      (data: any) => {
         console.log(data);
         this.loginService.loginUser(data.token);
-        this.loginService.getCurrentUser().subscribe((user:any) => {
+        this.loginService.getCurrentUser().subscribe((user: any) => {
           this.loginService.setUser(user);
           console.log(user);
 
-          if(this.loginService.getUserRole() == 'ADMIN'){
-
+          if (this.loginService.getUserRole() == 'ADMIN') {
             this.router.navigate(['admin']);
             this.loginService.loginStatusSubjec.next(true);
-          }
-          else if(this.loginService.getUserRole() == 'NORMAL'){
-
+          } else if (this.loginService.getUserRole() == 'NORMAL') {
             this.router.navigate(['user-dashboard']);
             this.loginService.loginStatusSubjec.next(true);
-          }
-          else{
+          } else {
             this.loginService.logout();
           }
-        })
-      },(error) => {
+        });
+      },
+      (error) => {
         console.log(error);
-        this.snack.open('Detalles inválidos , vuelva a intentar !!','Aceptar',{
-          duration:3000
-        })
+        this.snack.open(
+          'Detalles inválidos , vuelva a intentar !!',
+          'Aceptar',
+          {
+            duration: 3000,
+          }
+        );
       }
-    )
+    );
   }
-
-
-
 }

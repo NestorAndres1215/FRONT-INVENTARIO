@@ -29,10 +29,10 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 
 import { LoginComponent } from './pages/configuracion/login/login.component';
 import { HomeComponent } from './pages/configuracion/home/home.component';
-import { authInterceptorProviders } from './services/auth.interceptor';
+
 import { DashboardComponent } from './pages/admin/home-admin/home-admin.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { NavbarAdminComponent } from './components/admin/navbar-admin/navbar-admin.component';
+import { NavbarAdminComponent } from './shared/navbar-admin/navbar-admin.component';
 import { PrincipalComponent } from './pages/admin/principal/principal.component';
 import { PerfilComponent } from './pages/admin/perfil/perfil.component';
 import { ProductosComponent } from './pages/admin/productos/productos.component';
@@ -50,7 +50,7 @@ import { ActualizarProveedorComponent } from './pages/admin/proveedor/actualizar
 import { NgxPaginationModule } from 'ngx-pagination';
 import { ListarProductoActivadasComponent } from './pages/admin/productos/listar-producto-activadas/listar-producto-activadas.component';
 import { ListarProductoDesactivadasComponent } from './pages/admin/productos/listar-producto-desactivadas/listar-producto-desactivadas.component';
-import { NavbarUsuarioComponent } from './components/usuario/navbar-usuario/navbar-usuario.component';
+import { NavbarUsuarioComponent } from './shared/navbar-usuario/navbar-usuario.component';
 import { HomeUsuarioComponent } from './pages/usuario/home-usuario/home-usuario.component';
 import { UsuarioAdministradorComponent } from './pages/admin/usuario/usuario-administrador/usuario-administrador.component';
 import { UsuarioOperadorComponent } from './pages/admin/usuario/usuario-operador/usuario-operador.component';
@@ -81,12 +81,11 @@ import { SalidasComponent } from './pages/admin/salidas/salidas.component';
 import { RegistrarSalidasComponent } from './pages/admin/salidas/registrar-salidas/registrar-salidas.component';
 import { ListarSalidasComponent } from './pages/admin/salidas/listar-salidas/listar-salidas.component';
 import { DetalleSalidasComponent } from './pages/admin/salidas/detalle-salidas/detalle-salidas.component';
-import { ActualizarEntradaComponent } from './pages/admin/entradas/actualizar-entrada/actualizar-entrada.component';
+
 import { SalidaUsuarioComponent } from './pages/usuario/salida-usuario/salida-usuario.component';
 import { EntradaUsuarioComponent } from './pages/usuario/entrada-usuario/entrada-usuario.component';
 import { ListarEntradasUsuarioComponent } from './pages/usuario/entrada-usuario/listar-entradas-usuario/listar-entradas-usuario.component';
 import { ListarSalidaUsuarioComponent } from './pages/usuario/salida-usuario/listar-salida-usuario/listar-salida-usuario.component';
-import { ActualizarSalidaComponent } from './pages/admin/salidas/actualizar-salida/actualizar-salida.component';
 import { ActualizarUsuarioComponent } from './pages/admin/usuario/actualizar-usuario/actualizar-usuario.component';
 import { NosotrosComponent } from './pages/empresa/nosotros/nosotros.component';
 import { ListarReclamoActivadosComponent } from './pages/admin/reclamos/listar-reclamo-activados/listar-reclamo-activados.component';
@@ -100,6 +99,7 @@ import { ActualizarInventarioComponent } from './pages/usuario/inventario-usuari
 import { GuardarInventarioComponent } from './pages/usuario/inventario-usuario/guardar-inventario/guardar-inventario.component';
 import { RegistarSalidaUsuarioComponent } from './pages/usuario/salida-usuario/registar-salida-usuario/registar-salida-usuario.component';
 import { RegistrarEntradaUsuarioComponent } from './pages/usuario/entrada-usuario/registrar-entrada-usuario/registrar-entrada-usuario.component';
+import { authInterceptorProviders } from './core/interceptors/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -155,12 +155,12 @@ import { RegistrarEntradaUsuarioComponent } from './pages/usuario/entrada-usuari
     RegistrarSalidasComponent,
     ListarSalidasComponent,
     DetalleSalidasComponent,
-    ActualizarEntradaComponent,
+   
     SalidaUsuarioComponent,
     EntradaUsuarioComponent,
     ListarEntradasUsuarioComponent,
     ListarSalidaUsuarioComponent,
-    ActualizarSalidaComponent,
+ 
     ActualizarUsuarioComponent,
     NosotrosComponent,
     ListarReclamoActivadosComponent,
@@ -174,7 +174,7 @@ import { RegistrarEntradaUsuarioComponent } from './pages/usuario/entrada-usuari
     GuardarInventarioComponent,
     RegistarSalidaUsuarioComponent,
     RegistrarEntradaUsuarioComponent,
- 
+
 
 
 

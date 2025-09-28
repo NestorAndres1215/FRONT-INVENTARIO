@@ -1,52 +1,55 @@
-<div class="bootstrap-wrapper">
-    <div class="container">
-        <h1>Detalle de Entrada de Producto</h1>
-        <hr>
-        <br>
-        <div class="text-center">
-        </div>
-        <div class="row">
-            <div class="col-md-10 offset-md-1">
-                <table class="table text-center " *ngIf="detalleSalida">
-                    <tr>
-                        <th colspan="2" class="text-center" style="background-color: deepskyblue; margin-top: 550px;">
-                            Información de Contacto </th>
-                    </tr>
-                    <tr>
-                        <td><strong>Código</strong></td>
-                        <td>{{ detalleSalida.detalleSalidaId }}</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Producto</strong></td>
-                        <td>{{ detalleSalida.producto.nombre }}</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Descripcion</strong></td>
-                        <td>{{ detalleSalida.descripcion }}</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Cantidad</strong></td>
-                        <td>{{ detalleSalida.cantidad }}</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Stock</strong></td>
-                        <td>{{ detalleSalida.producto.stock }}</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Fecha de Salida</strong></td>
-                        <td>{{ detalleSalida.salida.fechaSalida }}</td>
-                    </tr>
+<body>
+  <div class="container">
+    <h1><i class="fas fa-info-circle"></i> Detalle de Salidas de Producto</h1>
+    <hr />
 
-                    <tr>
-                        <td><strong>Usuario</strong></td>
-                        <td>{{ detalleSalida.usuario.username }}</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Nombre</strong></td>
-                        <td>{{ detalleSalida.usuario.nombre+" "+detalleSalida.usuario.apellido  }}</td>
-                    </tr>
-                </table>
-            </div>
-        </div>
+    <div class="row">
+      <div class="col-md-12">
+        <table class="table" *ngIf="detalleSalida">
+          <tr>
+            <th colspan="2">Información de Contacto</th>
+          </tr>
+          <tr>
+            <td><i class="fas fa-hashtag"></i> Código</td>
+            <td>{{ detalleSalida.detalleSalidaId }}</td>
+          </tr>
+          <tr>
+            <td><i class="fas fa-box"></i> Producto</td>
+            <td>{{ detalleSalida.producto.nombre }}</td>
+          </tr>
+          <tr>
+            <td><i class="fas fa-file-alt"></i> Descripción</td>
+            <td>{{ detalleSalida.descripcion }}</td>
+          </tr>
+          <tr>
+            <td><i class="fas fa-sort-numeric-up"></i> Cantidad</td>
+            <td>{{ detalleSalida.cantidad }}</td>
+          </tr>
+          <tr>
+            <td><i class="fas fa-boxes"></i> Stock</td>
+            <td>{{ detalleSalida.producto.stock }}</td>
+          </tr>
+          <tr>
+            <td><i class="fas fa-calendar-alt"></i>Fecha de Salida</td>
+            <td>{{ detalleSalida.salida.fechaSalida }}</td>
+          </tr>
+
+          <tr>
+            <td><i class="fas fa-user"></i> Usuario</td>
+            <td>{{ detalleSalida.usuario.username }}</td>
+          </tr>
+          <tr>
+            <td><i class="fas fa-user"></i> Nombre</td>
+            <td>
+              {{
+                detalleSalida.usuario.nombre +
+                  " " +
+                  detalleSalida.usuario.apellido
+              }}
+            </td>
+          </tr>
+        </table>
+      </div>
     </div>
-</div>
+  </div>
+</body>

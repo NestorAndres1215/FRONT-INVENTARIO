@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { UntypedFormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { LoginService } from 'src/app/services/login.service';
-import { ProductoService } from 'src/app/services/producto.service';
-import { SalidaService } from 'src/app/services/salida.service';
+import { LoginService } from 'src/app/core/services/login.service';
+import { ProductoService } from 'src/app/core/services/producto.service';
+import { SalidaService } from 'src/app/core/services/salida.service';
 import swal from 'sweetalert2';
 @Component({
   selector: 'app-registrar-salidas',
@@ -10,6 +11,8 @@ import swal from 'sweetalert2';
   styleUrls: ['./registrar-salidas.component.css']
 })
 export class RegistrarSalidasComponent implements OnInit {
+
+  formulario!: UntypedFormGroup;
   fechaSalida: string="";
  listaDetalleSalida:any[]=[];
   producto: any[] = [];
@@ -47,7 +50,7 @@ export class RegistrarSalidasComponent implements OnInit {
 
   }
 
-  enviarEntrada() {
+  enviarSalida() {
     console.log(this.detalleSalida);
   
     //Verifica que los campos estén completos

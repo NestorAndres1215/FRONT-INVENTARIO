@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import baserUrl from 'src/app/services/helper';
+import baserUrl from 'src/app/core/models/helper';
 import { Observable, catchError, throwError } from 'rxjs';
 @Injectable({
   providedIn: 'root'

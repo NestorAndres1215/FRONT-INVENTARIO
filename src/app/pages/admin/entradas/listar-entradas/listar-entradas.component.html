@@ -1,43 +1,56 @@
-<br>
-<div class="row">
-    <div class="col-md-4 mb-3">
-        <button class="btn btn-primary btn-block" routerLink="/admin/entradas/registrar-entradas">Registrar Entrada
-        </button>
+<body>
+  <div class="container">
+    <h2><i class="fas fa-sign-in-alt"></i> Módulo de Entradas</h2>
+    <hr />
+    <div class="action-buttons">
+      <button
+        class="btn-action"
+        routerLink="/admin/entradas/registrar-entradas"
+      >
+        <i class="fas fa-plus-circle"></i>Registrar Entrada
+      </button>
+      <button class="btn-action" (click)="descargarPDF()">
+        <i class="fas fa-file-pdf"></i> Generar Reporte
+      </button>
     </div>
-
-</div>
-<div class="col-md-4 mb-3">
-    <button class="btn btn-primary btn-block" (click)="descargarPDF()">Generar Reporte</button>
-</div>
-<div>
-
     <table class="table table-bordered">
-        <thead style="background-color: deepskyblue;" class="text-center">
-            <tr>
-                <th>Código</th>
-                <th>Producto</th>
-                <th>Descripcion</th>
-                <th>Cantidad</th>
-                <th>Fecha de Entrada</th>
-                <th>Responsable</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody class="text-center">
-            <tr *ngFor="let entradas of detalleEntrada">
-                <td>{{ entradas.detalleEntradaId }}</td>
-                <td>{{ entradas.producto?.nombre }}</td>
-                <td>{{ entradas.descripcion }}</td>
-                <td>{{ entradas.cantidad }}</td>
-                <td>{{entradas.entrada.fechaEntrada}}</td>
-                <td>{{entradas.usuario.nombre}}</td>
-                <td>
-                    <button class="btn btn-warning text-light"
-                        routerLink="/admin/entradas/detalle/{{entradas.detalleEntradaId }}"><i
-                        class='bx bx-info-circle'></i></button>
-                         
-                </td>
-            </tr>
-        </tbody>
+      <thead>
+        <tr>
+          <th><i class="fas fa-hashtag"></i> Código</th>
+          <th><i class="fas fa-box"></i> Producto</th>
+          <th><i class="fas fa-file-alt"></i> Descripción</th>
+          <th><i class="fas fa-sort-numeric-up"></i> Cantidad</th>
+          <th><i class="fas fa-calendar-alt"></i> Fecha de Entrada</th>
+          <th><i class="fas fa-user"></i> Responsable</th>
+          <th><i class="fas fa-cogs"></i> Acciones</th>
+        </tr>
+      </thead>
+      <tbody class="text-center">
+        <tr *ngFor="let entradas of detalleEntrada">
+          <td>{{ entradas.detalleEntradaId }}</td>
+          <td>{{ entradas.producto?.nombre }}</td>
+          <td>{{ entradas.descripcion }}</td>
+          <td>{{ entradas.cantidad }}</td>
+          <td>{{ entradas.entrada.fechaEntrada }}</td>
+          <td>{{ entradas.usuario.nombre }}</td>
+          <td>
+            <button
+              class="btn-details"
+              routerLink="/admin/entradas/detalle/{{
+                entradas.detalleEntradaId
+              }}"
+            >
+              <i class="bx bx-info-circle"></i>
+            </button>
+          </td>
+        </tr>
+        <tr *ngIf="!detalleEntrada || detalleEntrada.length === 0">
+          <td colspan="6" class="text-center">
+            <i class="fas fa-exclamation-circle"></i> No hay reclamos
+            registrados.
+          </td>
+        </tr>
+      </tbody>
     </table>
-</div>
+  </div>
+</body>

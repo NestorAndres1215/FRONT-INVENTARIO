@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { EntradaService } from 'src/app/services/entrada.service';
-import { ReportesService } from 'src/app/services/reportes.service';
+import { EntradaService } from 'src/app/core/services/entrada.service';
+import { ReportesService } from 'src/app/core/services/reportes.service';
 
 @Component({
   selector: 'app-listar-entradas-usuario',

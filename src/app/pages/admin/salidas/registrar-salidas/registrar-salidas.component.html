@@ -1,65 +1,97 @@
-<!-- entrada-producto.component.html -->
+<body>
+  <div class="container">
+    <h1><i class="fas fa-sign-out-alt"></i> Registro de Salida de Producto</h1>
+    <hr />
+    <form class="form-grid" (submit)="enviarSalida()">
+      <!-- Primera fila: Usuario y Cantidad -->
+      <mat-form-field appearance="outline" *ngIf="isLoggedIn && user">
+        <mat-label><i class="fas fa-user"></i> Usuario</mat-label>
+        <input
+          matInput
+          required
+          name="Usuario"
+          disabled
+          [value]="user.username"
+        />
+      </mat-form-field>
 
-<div class="container">
-    <h1>Registro de Salida de Producto</h1>
-    <hr>
-    <form (submit)="enviarEntrada()">
-      <mat-form-field class="w100" appearance="outline">
-        <mat-label>Fecha de Entrada</mat-label>
-        <input matInput required name="fechaEntrada" type="date" [(ngModel)]="detalleSalida.salida.fechaSalida" />
+      <mat-form-field appearance="outline">
+        <mat-label><i class="fas fa-sort-numeric-up"></i> Cantidad</mat-label>
+        <input
+          matInput
+          type="number"
+          required
+          name="cantidad"
+          [(ngModel)]="detalleSalida.cantidad"
+        />
       </mat-form-field>
-      &nbsp;
-      <mat-form-field class="w100" appearance="outline" *ngIf="isLoggedIn && user">
-        <mat-label>Usuario</mat-label>
-        <input matInput required name="Usuario" disabled="true" [value]="user.username" />
-      </mat-form-field>
-      &nbsp;
-      <button type="submit" class="btn btn-primary w100">Registrar Entrada</button>
-      &nbsp;
-  
-      <br>
-      <mat-form-field class="w100" appearance="outline">
-        <mat-label>Producto</mat-label>
-        <mat-select required name="productoId" [(ngModel)]="detalleSalida.producto.productoId">
-          <mat-option *ngFor="let producto of producto" [value]="producto.productoId">{{ producto.nombre }}</mat-option>
+
+      <!-- Segunda fila: Producto y Descripción -->
+      <mat-form-field appearance="outline">
+        <mat-label><i class="fas fa-box"></i> Producto</mat-label>
+        <mat-select
+          required
+          name="productoId"
+          [(ngModel)]="detalleSalida.producto.productoId"
+        >
+          <mat-option
+            *ngFor="let producto of producto"
+            [value]="producto.productoId"
+            >{{ producto.nombre }}</mat-option
+          >
         </mat-select>
       </mat-form-field>
-      &nbsp;
-      <mat-form-field class="w100" appearance="outline">
-        <mat-label>Descripción</mat-label>
-        <input matInput required name="descripcion" [(ngModel)]="detalleSalida.descripcion" />
+
+      <mat-form-field appearance="outline">
+        <mat-label><i class="fas fa-file-alt"></i> Descripción</mat-label>
+        <input
+          matInput
+          required
+          name="descripcion"
+          [(ngModel)]="detalleSalida.descripcion"
+        />
       </mat-form-field>
-      &nbsp;
-      <mat-form-field class="w100" appearance="outline">
-        <mat-label>Cantidad</mat-label>
-        <input matInput type="number" required name="cantidad" [(ngModel)]="detalleSalida.cantidad" />
+
+      <!-- Tercera fila: Fecha ocupa toda la columna -->
+      <mat-form-field appearance="outline" style="grid-column: span 2">
+        <mat-label
+          ><i class="fas fa-calendar-alt"></i> Fecha de Salida</mat-label
+        >
+        <input
+          matInput
+          required
+          name="fechaSalida"
+          type="date"
+          [(ngModel)]="detalleSalida.salida.fechaSalida"
+        />
       </mat-form-field>
+
+      <!-- Cuarta fila: botones en dos columnas -->
+      <div class="form-buttons">
+        <button type="submit" class="btn-action">
+          <i class="fas fa-save"></i> Registrar Salida
+        </button>
+        <button type="button" class="btn-action" (click)="agregarProducto()">
+          <i class="fas fa-plus-circle"></i> Agregar Registro
+        </button>
+      </div>
     </form>
-    <div>
-      <button type="submit" class="btn btn-primary w100" (click)="agregarProducto()">Agregar Registro</button>
-  
-  
-    </div>
-    <br><br><br>
+
     <div>
       <table class="table">
         <thead>
           <tr>
-  
-            <th>Descripción</th>
-            <th>Cantidad</th>
+            <th><i class="fas fa-file-alt"></i> Descripción</th>
+            <th><i class="fas fa-sort-numeric-up"></i> Cantidad</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let detalle of listaDetalleSalida">
-          
-  
             <td>{{ detalle.descripcion }}</td>
             <td>{{ detalle.cantidad }}</td>
           </tr>
         </tbody>
       </table>
-  
     </div>
   </div>
-  <br>
+</body>

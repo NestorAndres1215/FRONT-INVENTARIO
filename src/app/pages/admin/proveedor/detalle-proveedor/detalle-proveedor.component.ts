@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ProveedorService } from 'src/app/services/proveedor.service';
+import { ProveedorService } from 'src/app/core/services/proveedor.service';
 
 @Component({
   selector: 'app-detalle-proveedor',

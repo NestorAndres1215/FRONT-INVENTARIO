@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { ReportesService } from 'src/app/services/reportes.service';
-import { SalidaService } from 'src/app/services/salida.service';
+import { ReportesService } from 'src/app/core/services/reportes.service';
+import { SalidaService } from 'src/app/core/services/salida.service';
 
 @Component({
   selector: 'app-listar-salidas',

@@ -2,7 +2,7 @@ import  Swal  from 'sweetalert2';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 import { Component, OnInit } from '@angular/core';
-import { UserService } from 'src/app/services/user.service';
+import { UserService } from 'src/app/core/services/user.service';
 import { Router } from '@angular/router';
 
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Route, Router } from '@angular/router';
 import { LoginService
- } from 'src/app/services/login.service';
+ } from 'src/app/core/services/login.service';
 @Component({
   selector: 'app-navbar-admin',
   templateUrl: './navbar-admin.component.html',
@@ -8,12 +9,14 @@ import { LoginService
 })
 export class NavbarAdminComponent implements OnInit {
 
-  
+  isActive(path: string): boolean {
+  return this.router.url === path;
+}
   isLoggedIn = false;
   user:any = null;
   contenido: any;
 
-  constructor(public login:LoginService) { }
+  constructor(public login:LoginService,private router:Router) { }
 
   ngOnInit(): void {
     this.isLoggedIn = this.login.isLoggedIn();

@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { Router } from '@angular/router';
-import { ProductoService } from 'src/app/services/producto.service';
+import { ProductoService } from 'src/app/core/services/producto.service';
 import Swal from 'sweetalert2';
 
 @Component({

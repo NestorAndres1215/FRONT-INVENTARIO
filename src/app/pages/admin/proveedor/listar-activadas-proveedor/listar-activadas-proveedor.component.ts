@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
-import { ProveedorService } from 'src/app/services/proveedor.service';
-import { ReportesService } from 'src/app/services/reportes.service';
+import { ProveedorService } from 'src/app/core/services/proveedor.service';
+import { ReportesService } from 'src/app/core/services/reportes.service';
 import Swal from 'sweetalert2';
 @Component({
   selector: 'app-listar-activadas-proveedor',

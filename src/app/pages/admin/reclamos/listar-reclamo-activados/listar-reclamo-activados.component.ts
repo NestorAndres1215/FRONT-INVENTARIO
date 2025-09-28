@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ReclamoService } from 'src/app/services/reclamo.service';
+import { ReclamoService } from 'src/app/core/services/reclamo.service';
 
 @Component({
   selector: 'app-listar-reclamo-activados',

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import baserUrl from './helper';
+import baserUrl from '../models/helper';
 import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'

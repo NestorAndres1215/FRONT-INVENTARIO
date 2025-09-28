@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
-import { ReportesService } from 'src/app/services/reportes.service';
-import { UsuarioService } from 'src/app/services/usuario.service';
+import { ReportesService } from 'src/app/core/services/reportes.service';
+import { UsuarioService } from 'src/app/core/services/usuario.service';
 import Swal from 'sweetalert2';
 
 @Component({

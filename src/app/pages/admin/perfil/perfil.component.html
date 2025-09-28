@@ -1,40 +1,36 @@
-<div class="bootstrap-wrapper" style="margin-left: 10px;">
+<body>
   <div class="container">
-
-   
-    <div style="text-align: right;">
-      <button class="btn btn-success" routerLink="/admin/configuracion/actualizar-usuario/{{ user.id}}">Actualizar Perfil</button>
-      <br>
-      <br>
-      <button class="btn btn-success">Actualizar Contraseña</button>
-  </div>
-   <div class="text-center">
-      <h1 class="mt20" style="text-transform: capitalize">{{ user.nombre }} {{ user.apellido }}</h1>
+    <div class="header">
+      <h1><i class="fas fa-user-circle"></i> {{ user.nombre }} {{ user.apellido }}</h1>
+    </div>
+    <div class="action-buttons">
+      <button routerLink="/admin/configuracion/actualizar-usuario/{{ user.id}}"><i class="fas fa-user-edit"></i> Actualizar Perfil</button>
+      <button><i class="fas fa-key"></i> Actualizar Contraseña</button>
     </div>
     <div class="row">
-      <div class="col-md-10 offset-md-1">
-        <table class="table text-center">
+      <div class="col-md-12">
+        <table class="profile-table">
           <tr>
-            <th colspan="2" class="text-center">Información de Contacto</th>
+            <th colspan="2">Información de Contacto</th>
           </tr>
           <tr>
-            <td><strong>Nombre de usuario</strong></td>
+            <td><i class="fas fa-user"></i> Nombre de usuario</td>
             <td style="text-transform: capitalize">{{ user.username }}</td>
           </tr>
           <tr>
-            <td><strong>Correo</strong></td>
+            <td><i class="fas fa-envelope"></i> Correo</td>
             <td>{{ user.email }}</td>
           </tr>
           <tr>
-            <td><strong>Teléfono</strong></td>
+            <td><i class="fas fa-phone"></i> Teléfono</td>
             <td>{{ user.telefono }}</td>
           </tr>
           <tr>
-            <td><strong>Rol</strong></td>
+            <td><i class="fas fa-shield-alt"></i> Rol</td>
             <td>{{ user.authorities[0].authority }}</td>
           </tr>
         </table>
       </div>
     </div>
   </div>
-</div>
+</body>

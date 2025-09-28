@@ -1,0 +1,166 @@
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #2a5298;
+      text-align: center;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    h1 i {
+      color: #ff6f61;
+      animation: pulse 2s infinite;
+    }
+
+    hr {
+      border: 0;
+      height: 2px;
+      background: #ff6f61;
+      margin: 20px 0;
+    }
+
+    .accordion-item {
+      border: none;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      background: #f5f5f5;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .accordion-header {
+      background: #2a5298;
+      border-radius: 10px;
+    }
+
+    .accordion-button {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #fff;
+      background: #2a5298;
+      padding: 15px;
+      border: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .accordion-button i {
+      color: #ff6f61;
+      font-size: 1.3rem;
+    }
+
+    .accordion-button:not(.collapsed) {
+      background: #ff6f61;
+      color: #fff;
+    }
+
+    .accordion-button:not(.collapsed) i {
+      color: #fff;
+    }
+
+    .accordion-button:focus {
+      box-shadow: none;
+      outline: none;
+    }
+
+    .accordion-body {
+      padding: 20px;
+      background: #fff;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    ::-webkit-scrollbar {
+      width: 7px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #ff6f61;
+      border-radius: 5px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 5px;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .accordion-button {
+        font-size: 1.1rem;
+        padding: 12px;
+      }
+
+      .accordion-body {
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 15px;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      .accordion-button {
+        font-size: 1rem;
+        padding: 10px;
+      }
+
+      .accordion-button i {
+        font-size: 1.1rem;
+      }
+
+      .accordion-body {
+        padding: 15px;
+      }
+    }

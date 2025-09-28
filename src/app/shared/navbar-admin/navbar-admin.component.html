@@ -1,0 +1,75 @@
+<body>
+  <!-- SIDEBAR -->
+  <section id="sidebar" [ngClass]="status ? 'hide' : ''">
+    <a routerLink="/admin" class="brand">
+      <img src="../../../../assets/img/logo.png" alt="Super Xtra Logo" class="imagen">
+    </a>
+    <ul class="side-menu top">
+      <li [ngClass]="{'active': isActive('/admin')}">
+        <a routerLink="/admin">
+          <i class="fas fa-home"></i>
+          <span class="texto">Principal</span>
+        </a>
+      </li>
+      <li [ngClass]="{'active': isActive('/admin/usuario')}">
+        <a routerLink="/admin/usuario">
+          <i class="fas fa-user"></i>
+          <span class="texto">Usuario</span>
+        </a>
+      </li>
+      <li [ngClass]="{'active': isActive('/admin/producto')}">
+        <a routerLink="/admin/producto">
+          <i class="fas fa-box"></i>
+          <span class="texto">Inventario</span>
+        </a>
+      </li>
+      <li [ngClass]="{'active': isActive('/admin/proveedor')}">
+        <a routerLink="/admin/proveedor">
+          <i class="fas fa-building"></i>
+          <span class="texto">Proveedor</span>
+        </a>
+      </li>
+      <li [ngClass]="{'active': isActive('/admin/entradas')}">
+        <a routerLink="/admin/entradas">
+          <i class="fas fa-sign-in-alt"></i>
+          <span class="texto">Entradas</span>
+        </a>
+      </li>
+      <li [ngClass]="{'active': isActive('/admin/salidas')}">
+        <a routerLink="/admin/salidas">
+          <i class="fas fa-sign-out-alt"></i>
+          <span class="texto">Salidas</span>
+        </a>
+      </li>
+    </ul>
+    <ul class="side-menu top">
+      <li [ngClass]="{'active': isActive('/admin/configuracion')}">
+        <a routerLink="/admin/configuracion">
+          <i class="fas fa-cog"></i>
+          <span class="texto">Configuración</span>
+        </a>
+      </li>
+      <li>
+        <a *ngIf="isLoggedIn" (click)="logout()" class="logout">
+          <i class="fas fa-sign-out-alt"></i>
+          <span class="texto">Cerrar Sesión</span>
+        </a>
+      </li>
+    </ul>
+  </section>
+  <!-- SIDEBAR -->
+
+  <!-- CONTENT -->
+  <section id="content">
+    <!-- NAVBAR -->
+    <nav>
+      <i (click)="addToggle()" class="fas fa-bars"></i>
+      <span *ngIf="isLoggedIn && user" class="user-info">{{ user.username }}</span>
+    </nav>
+    <!-- MAIN -->
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+  </section>
+  <!-- CONTENT -->
+</body>

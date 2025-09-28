@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ReclamoService } from 'src/app/services/reclamo.service';
+import { ReclamoService } from 'src/app/core/services/reclamo.service';
 import Swal from 'sweetalert2';
 @Component({
   selector: 'app-responder-correo',
